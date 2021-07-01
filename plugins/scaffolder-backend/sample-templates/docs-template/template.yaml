@@ -46,10 +46,8 @@ spec:
         repoUrl:
           title: Repository Location
           type: string
-          ui:field: RepoUrlPicker
           ui:options:
-            allowedHosts:
-              rows: 5
+            rows: 5
   # This template is meant to be used on top of an existing tmeplate.
   # By adding the following and fetching from an absolute URL you can 
   # add in the docs template
