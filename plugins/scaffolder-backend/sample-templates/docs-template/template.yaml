@@ -47,11 +47,9 @@ spec:
         repoUrl:
           title: Repository Location
           type: string
-          ui:field: RepoUrlPicker
+          ui:autofocus: true
           ui:options:
-            allowedHosts:
-              - github.com
-              - gitlab.com
+            rows: 5
 
   # This template is meant to be used on top of an existing tmeplate.
   # By adding the following and fetching from an absolute URL you can 
@@ -61,7 +59,7 @@ spec:
       name: Template Docs Skeleton
       action: fetch:cookiecutter
       input:
-        url: ./skeleton
+        url: https://github.com/mateuszpierzchala/backstage/tree/master/plugins/scaffolder-backend/sample-templates/docs-template/skeleton
         values:
           name: '{{ parameters.name }}'
           description: '{{ parameters.description }}' 
@@ -70,9 +68,9 @@ spec:
 
     - id: publish
       name: Publish
-      action: publish:github
+      action: publish:gitlab
       input:
-        allowedHosts: ['github.com']
+        allowedHosts: ['github.com', 'gitlab.com]
         description: 'This is {{ parameters.component_id }}'
         repoUrl: '{{ parameters.repoUrl }}'
 
