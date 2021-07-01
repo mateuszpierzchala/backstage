@@ -49,9 +49,7 @@ spec:
           ui:field: RepoUrlPicker
           ui:options:
             allowedHosts:
-              - github.com
-              - gitlab.com
-
+              rows: 5
   # This template is meant to be used on top of an existing tmeplate.
   # By adding the following and fetching from an absolute URL you can 
   # add in the docs template
@@ -64,7 +62,7 @@ spec:
         values:
           name: '{{ parameters.name }}'
           description: '{{ parameters.description }}' 
-          destination: '{{ parseRepoUrl parameters.repoUrl }}'
+          destination: '{{ parameters.repoUrl }}'
           owner: '{{ parameters.owner }}'
 
     - id: publish
